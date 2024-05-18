@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent } from 'react';
-import { Card, CardContent, FormControl, RadioGroup, FormControlLabel, Radio, Button, BoxProps, styled } from '@mui/material';
+import { Card, CardContent, FormControl, RadioGroup, FormControlLabel, Radio, Button, BoxProps } from '@mui/material';
 import { H4 } from '../../components/Typography';
 
 interface Question {
