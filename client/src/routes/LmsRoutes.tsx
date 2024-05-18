@@ -2,6 +2,7 @@ import { Outlet, useRoutes } from "react-router-dom";
 import IndexHome from "../pages/home/Index";
 import MiniDrawer from "../layout/DashboardLayout";
 import { Suspense } from "react";
+import Quiz from "../pages/quiz/Quiz";
 
 export function LmsRoutes() {
   let element = useRoutes([
@@ -20,11 +21,11 @@ export function LmsRoutes() {
           path: "dashboard",
           element: <IndexHome />,
         },
-        { path: "quiz", element: <IndexHome /> },
+        { path: "quiz", element: <Quiz /> },
       ],
     },
-    { path: "signin", element:<>login</> },
-    { path: "signup", element:<>signup</> },
+    { path: "signin", element: <>login</> },
+    { path: "signup", element: <>signup</> },
   ]);
 
   return element;
