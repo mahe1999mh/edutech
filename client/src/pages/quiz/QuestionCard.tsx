@@ -1,41 +1,54 @@
-// QuestionCard.js
-import React, { useState } from 'react';
-import { Card, CardContent, Typography, FormControl, RadioGroup, FormControlLabel, Radio, Button } from '@mui/material';
+import React, { useState, ChangeEvent } from 'react';
+import { Card, CardContent, FormControl, RadioGroup, FormControlLabel, Radio, Button, BoxProps, styled } from '@mui/material';
 import { H4 } from '../../components/Typography';
 
-const QuestionCard = ({ question, onNext, onAnswer }) => {
-    const [selectedOption, setSelectedOption] = useState('');
+interface Question {
+  id: number;
+  question: string;
+  options: string[];
+  answer: string;
+}
 
-    const handleChange = (event) => {
-        setSelectedOption(event.target.value);
-    };
+interface QuestionCardProps extends BoxProps {
+  question: Question;
+  onNext: () => void;
+  onAnswer: (answer: string) => void;
+}
 
-    const handleNextClick = () => {
-        onAnswer(selectedOption);
-        onNext();
-        setSelectedOption('');
-    };
+const QuestionCard: React.FC<QuestionCardProps> = ({ question, onNext, onAnswer }) => {
+  const [selectedOption, setSelectedOption] = useState<string>('');
 
-    return (
-        <>
-            <Card sx={{ m: 2 }}>
-                <H4 sx={{ p: 1 }}>{question.question}</H4>
-            </Card>
-            <Card sx={{ display: "flex", flexDirection: "column", gap: "10px", m: 2 }}>
-                <CardContent>
-                    <FormControl component="fieldset">
-                        <RadioGroup value={selectedOption} onChange={handleChange}>
-                            {question.options.map((option, index) => (
-                                <FormControlLabel key={index} value={option} control={<Radio />} label={option} />
-                            ))}
-                        </RadioGroup>
-                    </FormControl>
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setSelectedOption(event.target.value);
+  };
 
-                </CardContent>
-                <Button disabled={!selectedOption} variant="contained" color="primary" onClick={handleNextClick}>Next</Button>
-            </Card>
-        </>
-    );
+  const handleNextClick = () => {
+    onAnswer(selectedOption);
+    onNext();
+    setSelectedOption('');
+  };
+
+  return (
+    <>
+      <Card sx={{ m: 2 }}>
+        <H4 sx={{ p: 1 }}>{question.question}</H4>
+      </Card>
+      <Card sx={{ display: 'flex', flexDirection: 'column', gap: '10px', m: 2 }}>
+        <CardContent>
+          <FormControl component="fieldset">
+            <RadioGroup value={selectedOption} onChange={handleChange}>
+              {question.options.map((option, index) => (
+                <FormControlLabel key={index} value={option} control={<Radio />} label={option} />
+              ))}
+            </RadioGroup>
+          </FormControl>
+        </CardContent>
+        <Button disabled={!selectedOption} variant="contained" color="primary" onClick={handleNextClick}>
+          Next
+        </Button>
+      </Card>
+    </>
+  );
 };
 
 export default QuestionCard;
