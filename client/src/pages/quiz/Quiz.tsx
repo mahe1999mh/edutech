@@ -1,5 +1,5 @@
 // Quiz.js
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Button, Container } from '@mui/material';
 import QuestionCard from './QuestionCard';
 
@@ -11,12 +11,55 @@ const questions = [
         answer: '4',
     },
     {
-        id: 2,
-        question: 'What is the capital of France?',
-        options: ['London', 'Madrid', 'Paris', 'Berlin'],
-        answer: 'Paris',
+        id: 3,
+        question: 'Which company developed JavaScript?',
+        options: ['Google', 'Apple', 'Microsoft', 'Netscape'],
+        answer: 'Netscape',
+    },
+    {
+        id: 4,
+        question: 'Which of the following is a JavaScript framework?',
+        options: ['Laravel', 'Django', 'React', 'Rails'],
+        answer: 'React',
+    },
+    {
+        id: 5,
+        question: 'What is the output of "typeof null"?',
+        options: ['null', 'undefined', 'object', 'number'],
+        answer: 'object',
+    },
+    {
+        id: 6,
+        question: 'Which symbol is used for comments in JavaScript?',
+        options: ['//', '/*', '#', '<!--'],
+        answer: '//',
+    },
+    {
+        id: 7,
+        question: 'How do you create a function in JavaScript?',
+        options: ['function myFunction()', 'def myFunction()', 'create myFunction()', 'lambda myFunction()'],
+        answer: 'function myFunction()',
+    },
+    {
+        id: 8,
+        question: 'Which method is used to parse a JSON string into a JavaScript object?',
+        options: ['JSON.parse()', 'JSON.stringify()', 'JSON.convert()', 'JSON.toObject()'],
+        answer: 'JSON.parse()',
+    },
+    {
+        id: 9,
+        question: 'What is the correct way to declare a variable in JavaScript?',
+        options: ['variable myVar', 'let myVar', 'var: myVar', 'myVar = var'],
+        answer: 'let myVar',
+    },
+    {
+        id: 10,
+        question: 'Which of the following is NOT a reserved word in JavaScript?',
+        options: ['interface', 'throws', 'program', 'short'],
+        answer: 'program',
     },
 ];
+
 
 const Quiz = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
