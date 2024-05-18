@@ -11,7 +11,10 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
+import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard';
 import { FC } from "react";
+import { Link } from "react-router-dom";
+import QuizIcon from '@mui/icons-material/Quiz';
 
 const drawerWidth = 240;
 
@@ -62,16 +65,16 @@ const Drawer = styled(MuiDrawer, {
   }),
 }));
 
-const Sidebar:FC<any> = ({ open, handleDrawerClose }) => {
-  const theme = useTheme();
 
-  const menuItems = [
-    { name: "inbox", label: "Inbox", icone: <InboxIcon /> },
-    { name: "starred", label: "Starred", icone: <MailIcon /> },
-    { name: "sendEmail", label: "Send email", icone: <InboxIcon /> },
-    { name: "drafts", label: "Drafts", icone: <MailIcon /> },
+const menuItems = [
+    { path: "dashboard", label: "Dashboard", icone:<SpaceDashboardIcon/>},
+    { path: "quiz", label: "Quiz", icone: <QuizIcon /> },
+    { path: "sendEmail", label: "Send email", icone: <InboxIcon /> },
+    { path: "drafts", label: "Drafts", icone: <MailIcon /> },
   ];
 
+const Sidebar:FC<any> = ({ open, handleDrawerClose }) => {
+  const theme = useTheme();
   return (
     <Drawer variant="permanent" open={open}>
     <DrawerHeader>
@@ -89,6 +92,7 @@ const Sidebar:FC<any> = ({ open, handleDrawerClose }) => {
     <Divider />
     <List>
       {menuItems.map((item, index) => (
+        <Link style={{textDecoration: 'none', color:"#555"}} to={item.path}>
         <ListItem key={index} disablePadding sx={{ display: "block" }}>
           <ListItemButton
             sx={{
@@ -112,6 +116,7 @@ const Sidebar:FC<any> = ({ open, handleDrawerClose }) => {
             />
           </ListItemButton>
         </ListItem>
+        </Link>
       ))}
     </List>
     <Divider />

@@ -1,22 +1,30 @@
-
-import { useRoutes } from "react-router-dom";
+import { Outlet, useRoutes } from "react-router-dom";
 import IndexHome from "../pages/home/Index";
 import MiniDrawer from "../layout/DashboardLayout";
+import { Suspense } from "react";
 
 export function LmsRoutes() {
   let element = useRoutes([
     {
       path: "/",
-      element: <MiniDrawer />,
+      element: (
+        <MiniDrawer>
+          <Suspense>
+            <Outlet />
+          </Suspense>
+        </MiniDrawer>
+      ),
       children: [
+        { element: <IndexHome />, index: true },
         {
-          path: "messages",
+          path: "dashboard",
           element: <IndexHome />,
         },
-        { path: "tasks", element: <IndexHome /> },
+        { path: "quiz", element: <IndexHome /> },
       ],
     },
-    { path: "team", element: <MiniDrawer /> },
+    { path: "signin", element:<>login</> },
+    { path: "signup", element:<>signup</> },
   ]);
 
   return element;
