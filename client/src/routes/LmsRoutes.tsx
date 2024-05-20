@@ -3,7 +3,6 @@ import IndexHome from "../pages/home/Index";
 import MiniDrawer from "../layout/DashboardLayout";
 import { Suspense } from "react";
 import Quiz from "../pages/quiz/Quiz";
-import LoginView from "../pages/auth/SignIn";
 import SignIn from "../pages/auth/SignIn";
 import SignUp from "../pages/auth/SignUp";
 
