@@ -3,6 +3,9 @@ import IndexHome from "../pages/home/Index";
 import MiniDrawer from "../layout/DashboardLayout";
 import { Suspense } from "react";
 import Quiz from "../pages/quiz/Quiz";
+import LoginView from "../pages/auth/SignIn";
+import SignIn from "../pages/auth/SignIn";
+import SignUp from "../pages/auth/SignUp";
 
 export function LmsRoutes() {
   let element = useRoutes([
@@ -24,8 +27,8 @@ export function LmsRoutes() {
         { path: "quiz", element: <Quiz /> },
       ],
     },
-    { path: "signin", element: <>login</> },
-    { path: "signup", element: <>signup</> },
+    { path: "signin", element: <SignIn/> },
+    { path: "signup", element: <SignUp/> },
   ]);
 
   return element;
