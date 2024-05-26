@@ -1,9 +1,14 @@
 // authApi.js
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
+const baseUrl =
+  window.location.hostname === 'edutech-hazel.vercel.app'
+    ? 'https://api2-tau-navy.vercel.app/'
+    : 'http://localhost:8010/api/';
+
 export const authApi = createApi({
   reducerPath: 'authApi',
-  baseQuery: fetchBaseQuery({ baseUrl: `http://localhost:8010/api/` }),
+  baseQuery: fetchBaseQuery({ baseUrl }),
   endpoints: (builder) => ({
     login: builder.mutation({
       query: (body) => ({

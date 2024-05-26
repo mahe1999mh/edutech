@@ -13,7 +13,7 @@ app.use(cors());
 
 const port = process.env.PORT;
 
-app.use("/api/user", userRoutes);
+app.use("/api/user/signup", userRoutes);
 app.use("/api/user/login", authUser);
 
 app.listen(port, () => {
