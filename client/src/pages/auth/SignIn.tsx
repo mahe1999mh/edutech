@@ -29,10 +29,8 @@ export default function SignIn() {
 
     try {
       await login({ email, password }).unwrap();
-      // Handle successful login (e.g., navigate to another page, store user info, etc.)
     } catch (err) {
-      console.error('Failed to login:', err);
-      // Handle login error
+      console.error('Failed to login:', error);
     }
   };
 
@@ -86,7 +84,7 @@ export default function SignIn() {
             <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }} disabled={isLoading}>
               {isLoading ? <CircularProgress size={24} /> : 'Sign In'}
             </Button>
-            {isError && <Typography color="error">Login failed: {error.message}</Typography>}
+            {isError && <Typography color="error">Login failed</Typography>}
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">
