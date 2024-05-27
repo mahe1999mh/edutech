@@ -28,7 +28,12 @@ export default function SignIn() {
     const password = data.get('password');
 
     try {
-      await login({ email, password }).unwrap();
+      const response = await login({ email, password }).unwrap();
+      const token = response.data?.token;
+      if (token) {
+        localStorage.setItem('token', token);
+      }
+
     } catch (err) {
       console.error('Failed to login:', error);
     }
