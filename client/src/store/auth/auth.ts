@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 const baseUrl =
   window.location.hostname === 'edutech-hazel.vercel.app'
-    ? 'https://api2-tau-navy.vercel.app/'
+    ? 'https://apis-eta-smoky.vercel.app/ap'
     : 'http://localhost:8010/api/';
 
 export const authApi = createApi({
