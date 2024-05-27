@@ -29,6 +29,7 @@ export default function SignIn() {
 
     try {
       const response = await login({ email, password }).unwrap();
+      console.log(response);
       const token = response.data?.token;
       if (token) {
         localStorage.setItem('token', token);
