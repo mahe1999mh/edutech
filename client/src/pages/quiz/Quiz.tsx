@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Button, Container } from '@mui/material';
-import QuestionCard from './QuestionCard';
+import React, { useState } from "react";
+import { Button, Container } from "@mui/material";
+import QuestionCard from "./QuestionCard";
 
 interface Question {
   id: number;
@@ -12,9 +12,9 @@ interface Question {
 const questions: Question[] = [
   {
     id: 1,
-    question: 'What is 2 + 2?',
+    question: 'What is (2 + 2) - 1?',
     options: ['3', '4', '5', '6'],
-    answer: '4',
+    answer: '3',
   },
   {
     id: 3,
@@ -77,7 +77,10 @@ const Quiz: React.FC = () => {
   const [showResult, setShowResult] = useState<boolean>(false);
 
   const handleAnswer = (answer: string) => {
-    setUserAnswers([...userAnswers, { questionId: questions[currentQuestion].id, answer }]);
+    setUserAnswers([
+      ...userAnswers,
+      { questionId: questions[currentQuestion].id, answer },
+    ]);
   };
 
   const handleNext = () => {
@@ -85,7 +88,7 @@ const Quiz: React.FC = () => {
   };
 
   const handleSubmit = () => {
-    console.log('User answers:', userAnswers);
+    console.log("User answers:", userAnswers);
     setShowResult(true);
   };
 
@@ -103,7 +106,11 @@ const Quiz: React.FC = () => {
   return (
     <Container>
       {!showResult && currentQuestion < questions.length ? (
-        <QuestionCard question={questions[currentQuestion]} onNext={handleNext} onAnswer={handleAnswer} />
+        <QuestionCard
+          question={questions[currentQuestion]}
+          onNext={handleNext}
+          onAnswer={handleAnswer}
+        />
       ) : (
         <div>
           <p>Quiz completed!</p>

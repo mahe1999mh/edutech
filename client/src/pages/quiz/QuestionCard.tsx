@@ -31,7 +31,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({ question, onNext, onAnswer 
   return (
     <>
       <Card sx={{ m: 2 }}>
-        <H4 sx={{ p: 1 }}>{question.question}</H4>
+        <H4 sx={{ p: "15px" }}>{question.question}</H4>
       </Card>
       <Card sx={{ display: 'flex', flexDirection: 'column', gap: '10px', m: 2 }}>
         <CardContent>

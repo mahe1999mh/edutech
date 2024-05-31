@@ -12,7 +12,7 @@ import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard';
-import { FC } from "react";
+import { FC, useState } from "react";
 import { Link } from "react-router-dom";
 import QuizIcon from '@mui/icons-material/Quiz';
 
@@ -65,62 +65,76 @@ const Drawer = styled(MuiDrawer, {
   }),
 }));
 
-
 const menuItems = [
-    { path: "dashboard", label: "Dashboard", icone:<SpaceDashboardIcon/>},
-    { path: "quiz", label: "Quiz", icone: <QuizIcon /> },
-    { path: "sendEmail", label: "Send email", icone: <InboxIcon /> },
-    { path: "drafts", label: "Drafts", icone: <MailIcon /> },
-  ];
+    { path: "dashboard", label: "Dashboard", icon: <SpaceDashboardIcon /> },
+    { path: "quiz", label: "Quiz", icon: <QuizIcon /> },
+    { path: "sendEmail", label: "Send email", icon: <InboxIcon /> },
+    { path: "drafts", label: "Drafts", icon: <MailIcon /> },
+];
 
-const Sidebar:FC<any> = ({ open, handleDrawerClose }) => {
+const Sidebar: FC<any> = ({ open, handleDrawerClose }) => {
   const theme = useTheme();
+  const [selectedItem, setSelectedItem] = useState<string | null>(null);
+
+  const handleItemClick = (path: string) => {
+    setSelectedItem(path);
+  };
+
   return (
     <Drawer variant="permanent" open={open}>
-    <DrawerHeader>
-      <IconButton onClick={handleDrawerClose}>
-        {theme.direction === "rtl" ? (
-          <>
-            <ChevronRightIcon />
-          </>
-        ) : (
-          <ChevronLeftIcon />
-        )}
-      </IconButton>
-    </DrawerHeader>
+      <DrawerHeader>
+        <IconButton onClick={handleDrawerClose}>
+          {theme.direction === "rtl" ? (
+            <>
+              <ChevronRightIcon />
+            </>
+          ) : (
+            <ChevronLeftIcon />
+          )}
+        </IconButton>
+      </DrawerHeader>
 
-    <Divider />
-    <List>
-      {menuItems.map((item, index) => (
-        <Link style={{textDecoration: 'none', color:"#555"}} to={item.path}>
-        <ListItem key={index} disablePadding sx={{ display: "block" }}>
-          <ListItemButton
-            sx={{
-              minHeight: 48,
-              justifyContent: open ? "initial" : "center",
-              px: 2.5,
-            }}
+      <Divider />
+      <List>
+        {menuItems.map((item, index) => (
+          <Link
+            key={index}
+            style={{ textDecoration: 'none', color: "#555" }}
+            to={item.path}
+            onClick={() => handleItemClick(item.path)}
           >
-            <ListItemIcon
-              sx={{
-                minWidth: 0,
-                mr: open ? 3 : "auto",
-                justifyContent: "center",
-              }}
+            <ListItem
+              disablePadding
+              sx={{ display: "block", backgroundColor: selectedItem === item.path ? theme.palette.primary.dark : "inherit" }}
+              selected={selectedItem === item.path}
             >
-              {item?.icone}
-            </ListItemIcon>
-            <ListItemText
-              primary={item?.label}
-              sx={{ opacity: open ? 1 : 0 }}
-            />
-          </ListItemButton>
-        </ListItem>
-        </Link>
-      ))}
-    </List>
-    <Divider />
-  </Drawer>
+              <ListItemButton
+                sx={{
+                  minHeight: 48,
+                  justifyContent: open ? "initial" : "center",
+                  px: 2.5,
+                }}
+              >
+                <ListItemIcon
+                  sx={{
+                    minWidth: 0,
+                    mr: open ? 3 : "auto",
+                    justifyContent: "center",
+                  }}
+                >
+                  {item.icon}
+                </ListItemIcon>
+                <ListItemText
+                  primary={item.label}
+                  sx={{ opacity: open ? 1 : 0 }}
+                />
+              </ListItemButton>
+            </ListItem>
+          </Link>
+        ))}
+      </List>
+      <Divider />
+    </Drawer>
   );
 };
 

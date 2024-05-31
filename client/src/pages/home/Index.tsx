@@ -1,9 +1,9 @@
-import { H1 } from "../../components/Typography"
+import NotFoundView from "../../components/404"
 
 const IndexHome = () => {
   return (
     <div>
-     <H1>Home Page</H1>
+     <NotFoundView/>
     </div>
   )
 }
