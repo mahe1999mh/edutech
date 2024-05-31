@@ -1,6 +1,6 @@
 
 import { Stack } from "@mui/material"
-import { H1 } from "../components/Typography"
+import { H1 } from "../../components/Typography"
 
 
 function Contact() {

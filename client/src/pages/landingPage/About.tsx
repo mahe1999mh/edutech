@@ -1,6 +1,7 @@
 import { Container, Grid } from "@mui/material"
-import { H1, P } from "../components/Typography"
-import sub_logos from '../Assets/sub-logo3.jpg'
+import sub_logos from '../../Assets/sub-logo3.jpg'
+import { H1, P } from "../../components/Typography"
+
 
 function About() {
   return (

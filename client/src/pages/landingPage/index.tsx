@@ -1,8 +1,8 @@
-import Home from "../../layout/Home"
-import Header from "../../layout/Header"
-import About from "../../layout/About"
-import Courses from "../../layout/Courses"
-import Contact from "../../layout/Contact"
+import Home from "./Home"
+import Header from "./Header"
+import About from "./About"
+import Courses from "./Courses"
+import Contact from "./Contact"
 
 function LandingPage() {
   return (
