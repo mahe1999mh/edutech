@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import Quiz from "../pages/quiz/Quiz";
 import SignIn from "../pages/auth/SignIn";
 import SignUp from "../pages/auth/SignUp";
+import LandingPage from "../pages/landingPage/index";
 
 export function LmsRoutes() {
   const token = localStorage.getItem('token');
@@ -19,7 +20,7 @@ export function LmsRoutes() {
           </Suspense>
         </MiniDrawer>
       ) : (
-        <Navigate to="/signin" replace /> 
+        <Navigate to="/home" replace /> 
       ),
       children: [
         { element: <IndexHome />, index: true },
@@ -32,6 +33,7 @@ export function LmsRoutes() {
     },
     { path: "signin", element: <SignIn /> },
     { path: "signup", element: <SignUp /> },
+    {path: 'home', element: <LandingPage />}
   ]);
 
   return routes;
