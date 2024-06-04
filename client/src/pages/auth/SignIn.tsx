@@ -14,26 +14,29 @@ import Container from '@mui/material/Container';
 import CircularProgress from '@mui/material/CircularProgress';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useLoginMutation } from '../../store/auth/auth';
+import { useNavigate } from 'react-router-dom';
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
 export default function SignIn() {
   const [login, { isLoading, isError, error }] = useLoginMutation();
+ const navigate = useNavigate()
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const email = data.get('email');
     const password = data.get('password');
-
     try {
       const response = await login({ email, password }).unwrap();
       console.log(response);
       const token = response?.token;
       if (token) {
         localStorage.setItem('token', token);
+        navigate('/')
       }
+
 
     } catch (err) {
       console.error('Failed to login:', error);

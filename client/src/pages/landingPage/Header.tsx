@@ -1,12 +1,22 @@
-import { AppBar, Stack } from "@mui/material";
+import { AppBar, Button, Stack } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-scroll";
 
 function Header() {
+ const navigate = useNavigate()
+  const handleAction= (action: string) => {
+    if(action === 'signin'){
+       navigate('/signin')
+    }else{
+      navigate('/signup')
+    }
+
+  }
   return (
     <AppBar
       component="nav"
       sx={{
-        p: 3,
+        p: 2,
         px: 4,
         backgroundColor: "#ffffff",
         color: "black",
@@ -23,6 +33,7 @@ function Header() {
             spy={true}
             smooth={true}
             duration={500}
+            style={{ margin: '10px 15px'}}
           >
             Home
           </Link>
@@ -33,6 +44,7 @@ function Header() {
             spy={true}
             smooth={true}
             duration={500}
+            style={{ margin: '10px 15px'}}
           >
             About
           </Link>
@@ -43,6 +55,7 @@ function Header() {
             spy={true}
             smooth={true}
             duration={500}
+            style={{ margin: '10px 15px'}}
           >
             Courses
           </Link>
@@ -53,9 +66,38 @@ function Header() {
             spy={true}
             smooth={true}
             duration={500}
+            style={{ margin: '10px 15px'}}
           >
             Contact
           </Link>
+          <Button
+            variant="contained"
+            color="primary"
+            size="small"
+            className="btn"
+            onClick={() => handleAction('signin')}
+            sx={{
+              padding: "0px 20px",
+              fontSize: "13px",
+              fontWeight: "600",
+            }}
+          >
+            SignIn
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            size="small"
+            className="btn"
+             onClick={() => handleAction('signup')}
+            sx={{
+              padding: "0px 20px",
+              fontSize: "13px",
+              fontWeight: "600",
+            }}
+          >
+            SignUp
+          </Button>
         </Stack>
       </Stack>
     </AppBar>
