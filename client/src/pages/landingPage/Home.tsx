@@ -1,8 +1,8 @@
 import { Grid } from "@mui/material";
 
 import { Link } from "react-router-dom";
-import facebook from "../../assets/logo_facebook.png";
-import instagram from "../../assets/logo_insta.png";
+// import facebook from "../../assets/logo_facebook.png";
+// import instagram from "../../assets/logo_insta.png";
 import logo from '../../assets/website-logo1.jpg';
 import { H1, P } from "../../components/Typography";
 
@@ -28,10 +28,10 @@ function Home() {
           to={"https://www.facebook.com/"}
           target="_blank"
         >
-          <img src={facebook} className="logo" />
+          {/* <img src={facebook} className="logo" /> */}
         </Link>
         <Link to={"https://www.instagram.com/"} target="_blank">
-          <img src={instagram} className="logo" />
+          {/* <img src={instagram} className="logo" /> */}
         </Link>
         </div>
       </Grid>
