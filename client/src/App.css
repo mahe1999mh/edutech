@@ -2,9 +2,13 @@ a {
     color: black;
     cursor: pointer;
 }
+.btn:visited {
+    color: black;
+}
 
-
-
+.btn:hover {
+    color: black;
+}
 a:link {
     text-decoration: none;
 }
@@ -93,6 +97,9 @@ body {
 
 .input-label {
     margin: 4px 0;
+}
+.active {
+    font-weight: 700;
 }
 #root{
     height: 100vh;
