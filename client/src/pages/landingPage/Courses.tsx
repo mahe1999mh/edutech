@@ -1,9 +1,9 @@
 import { Grid } from "@mui/material";
 import { H1, P } from "../../components/Typography";
-import html_logo from "../../Assets/html-logo3.png";
-import css_logo from "../../Assets/logo-css2.png";
-import js_logo from "../../Assets/js.png";
-import react_logo from "../../Assets/recat_logo.png";
+import html_logo from "../../assets/html-logo3.png";
+import css_logo from "../../assets/logo-css2.png";
+import js_logo from "../../assets/js.png";
+import react_logo from "../../assets/recat_logo.png";
 function Courses() {
   return (
     <section id="course" className="sec">

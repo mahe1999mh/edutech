@@ -1,9 +1,9 @@
 import { Grid } from "@mui/material";
 
 import { Link } from "react-router-dom";
-import facebook from "../../Assets/logo_facebook.png";
-import instagram from "../../Assets/logo_insta.png";
-import logo from '../../Assets/website-logo1.jpg';
+import facebook from "../../assets/logo_facebook.png";
+import instagram from "../../assets/logo_insta.png";
+import logo from '../../assets/website-logo1.jpg';
 import { H1, P } from "../../components/Typography";
 
 function Home() {

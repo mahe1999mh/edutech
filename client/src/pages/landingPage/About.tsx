@@ -1,5 +1,5 @@
 import { Container, Grid } from "@mui/material"
-import sub_logos from '../../Assets/sub-logo3.jpg'
+import sub_logos from '../../assets/sub-logo3.jpg'
 import { H1, P } from "../../components/Typography"
 
 

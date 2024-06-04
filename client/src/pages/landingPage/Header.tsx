@@ -71,7 +71,7 @@ function Header() {
             Contact
           </Link>
           <Button
-            variant="contained"
+            // variant="contained"
             color="primary"
             size="small"
             className="btn"
@@ -85,7 +85,7 @@ function Header() {
             SignIn
           </Button>
           <Button
-            variant="contained"
+            // variant="contained"
             color="primary"
             size="small"
             className="btn"

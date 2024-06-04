@@ -3,11 +3,11 @@ a {
     cursor: pointer;
 }
 .btn:visited {
-    color: black;
+    color: #555;
 }
 
 .btn:hover {
-    color: black;
+    color:#555;
 }
 a:link {
     text-decoration: none;
