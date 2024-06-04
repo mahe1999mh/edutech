@@ -36,7 +36,7 @@ function Home() {
         </div>
       </Grid>
       <Grid item md={6} sx={{mt:3}}>
-        <img src={logo} width="500px" height="500px" style={{objectFit: "contain"}}/>
+        {/* <img src={logo} width="500px" height="500px" style={{objectFit: "contain"}}/> */}
       </Grid>
     </Grid>
     </section>
