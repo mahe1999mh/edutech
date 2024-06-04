@@ -3,7 +3,7 @@ import { Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 // import facebook from "../../assets/logo_facebook.png";
 // import instagram from "../../assets/logo_insta.png";
-import logo from '../../assets/website-logo1.jpg';
+// import logo from '../../assets/website-logo1.jpg';
 import { H1, P } from "../../components/Typography";
 
 function Home() {
