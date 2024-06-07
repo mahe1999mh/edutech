@@ -15,13 +15,16 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useLoginMutation } from '../../store/auth/auth';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { loginAction } from '../../store/auth/authSlice';
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
 export default function SignIn() {
   const [login, { isLoading, isError, error }] = useLoginMutation();
- const navigate = useNavigate()
+ const navigate = useNavigate();
+const dispatch = useDispatch();
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -34,7 +37,9 @@ export default function SignIn() {
       const token = response?.token;
       if (token) {
         localStorage.setItem('token', token);
-        navigate('/')
+        dispatch(loginAction())
+        navigate('/');
+
       }
 
 
