@@ -2,7 +2,7 @@ import  { useState, ChangeEvent, FormEvent } from 'react';
 import SimpleForm from './UiForm';
 
 const ChartIndex = () => {
-  const [formState, setFormState] = useState<any>({
+  const [formState, setFormState] = useState<{ title: string; description: string }>({
     title: "",
     description: "",
   });
@@ -42,8 +42,6 @@ const ChartIndex = () => {
     }
 
     console.log('Form Data:', formData);
-
-
   };
 
   return (
