@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 const baseUrl =
   window.location.hostname === 'edutech-hazel.vercel.app'
     ? 'https://apis-eta-smoky.vercel.app/api/'
-    : 'http://localhost:8010/api/';
+    : 'http://localhost:9001/api/';
 
 export const authApi = createApi({
   reducerPath: 'authApi',
@@ -13,7 +13,7 @@ export const authApi = createApi({
     login: builder.mutation({
       query: (body) => ({
         url: 'singin',
-        method: 'POST',
+        method:'POST',
         body,
         headers: {
           'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ export const authApi = createApi({
     signup: builder.mutation({
       query: (body) => ({
         url: 'singup',
-        method: 'POST',
+        method:'POST',
         body,
         headers: {
           'Content-Type': 'application/json',
