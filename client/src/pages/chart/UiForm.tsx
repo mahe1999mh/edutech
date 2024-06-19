@@ -3,7 +3,7 @@ import { TextField, Button, Typography, Box } from '@mui/material';
 
 interface SimpleFormProps {
   formState: any;
-  setFormState: React.Dispatch<React.SetStateAction<any>>;
+  setFormState: any;
   imagePreview: string | null;
   imageFile: File | null;
   onChangeHandle: (e: ChangeEvent<HTMLInputElement>) => void;
