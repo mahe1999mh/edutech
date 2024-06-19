@@ -5,7 +5,6 @@ interface SimpleFormProps {
   formState: any;
   setFormState: React.Dispatch<React.SetStateAction<any>>;
   imagePreview: string | null;
-  setImagePreview: React.Dispatch<React.SetStateAction<string | null>>;
   imageFile: File | null;
   onChangeHandle: (e: ChangeEvent<HTMLInputElement>) => void;
   handleImageChange: (e: ChangeEvent<HTMLInputElement>) => void;

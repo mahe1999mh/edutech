@@ -52,9 +52,7 @@ const ChartIndex = () => {
         formState={formState}
         setFormState={setFormState}
         imagePreview={imagePreview}
-        setImagePreview={setImagePreview}
         imageFile={imageFile}
-        setImageFile={setImageFile}
         onChangeHandle={onChangeHandle}
         handleImageChange={handleImageChange}
         handleSubmit={handleSubmit}
