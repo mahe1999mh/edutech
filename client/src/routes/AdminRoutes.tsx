@@ -7,6 +7,7 @@ import SignIn from "../pages/auth/SignIn";
 import SignUp from "../pages/auth/SignUp";
 import NotFoundView from "../components/404";
 import LandingPage from "../pages/landingPage/index";
+import ChartIndex from "../pages/chart/Index";
 
 
 const AdminRoutes = (isLoggedIn:any) => {
@@ -24,7 +25,7 @@ const AdminRoutes = (isLoggedIn:any) => {
       ),
       children: [
         { element: <IndexHome />, index: true },
-        { path: "dashboard", element: <>hello</> }, 
+        { path: "dashboard", element: <ChartIndex/> }, 
         { path: "quiz", element: <Quiz /> },
         { path: "*", element:  <NotFoundView/> },
       ],
