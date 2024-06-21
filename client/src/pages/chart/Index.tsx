@@ -1,22 +1,23 @@
-import  { useState, ChangeEvent, FormEvent } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react';
 import SimpleForm from './UiForm';
+import { useFormchatSchemaMutation } from '../../store/chatApi/chat';
 
 const ChartIndex = () => {
   const [formState, setFormState] = useState<{ title: string; description: string }>({
-    title: "",
-    description: "",
+    title: '',
+    description: '',
   });
-
+  const [postChat] = useFormchatSchemaMutation();
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [imageFile, setImageFile] = useState<File | null>(null);
 
   const onChangeHandle = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormState(prevState => ({
+    setFormState((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
-  }
+  };
 
   const handleImageChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files[0]) {
@@ -34,14 +35,8 @@ const ChartIndex = () => {
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-    const formData = new FormData();
-    formData.append('title', formState.title);
-    formData.append('description', formState.description);
-    if (imageFile) {
-      formData.append('image', imageFile);
-    }
-
-    console.log('Form Data:', formData);
+    const { title, description } = formState;
+    postChat({ title, description, imageUrl: imagePreview ? imagePreview : '' });
   };
 
   return (
@@ -57,6 +52,6 @@ const ChartIndex = () => {
       />
     </>
   );
-}
+};
 
 export default ChartIndex;
