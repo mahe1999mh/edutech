@@ -21,6 +21,7 @@ body {
     width: 80px;
     height: 80px;
     object-fit: contain;
+    border-radius: 50%;
 }
 
 .logo_container {
@@ -40,26 +41,25 @@ body {
 }
 
 .couses-logo {
-    width: 100px;
+    width: 250px;
     object-fit: contain;
 }
 
 .html {
-    width: 110px;
     margin-bottom: 10px;
 }
 
 .css {
-    width: 90px;
     margin-bottom: 10px;
 }
 
 .js {
-    margin-bottom: 18px;
+    margin-top: 15px;
+        margin-bottom: 10px;
 }
 
 .react {
-    margin-bottom: 10px;
+margin-bottom: 10px;
 }
 
 
