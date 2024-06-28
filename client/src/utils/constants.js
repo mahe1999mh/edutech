@@ -14,3 +14,5 @@ export const LOGO =
   export const COURSELOGO4 = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGb3T9oU_RPINhNiLuCncCsqtcWl9cYl3nNw&s';
   
   export const COURSELOGO5 = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxvATs3aVXuqbfPx9dqUixgGT9giKy1V_vsg&s';
+
+  export const HOMELOGO = 'https://media.istockphoto.com/id/516682755/photo/stock-market-concept.jpg?s=612x612&w=0&k=20&c=bUuZlAsgUfudpSldgTwY_OTXF1VMSbNblbAhXJmHuso='
