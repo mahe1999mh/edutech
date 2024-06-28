@@ -18,7 +18,7 @@ function Header() {
       sx={{
         p: 2,
         px: 4,
-        backgroundColor: "#ffffff",
+        backgroundColor: "hsl(0deg 0% 99% / 40%)",
         color: "black",
         boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
       }}
@@ -72,7 +72,7 @@ function Header() {
           </Link>
           <Button
             // variant="contained"
-            color="primary"
+            color="inherit"
             size="small"
             className="btn"
             onClick={() => handleAction('signin')}
@@ -80,13 +80,14 @@ function Header() {
               padding: "0px 20px",
               fontSize: "13px",
               fontWeight: "600",
+              backgroundColor:"white"
             }}
           >
             SignIn
           </Button>
           <Button
             // variant="contained"
-            color="primary"
+            color="inherit"
             size="small"
             className="btn"
              onClick={() => handleAction('signup')}
@@ -94,6 +95,7 @@ function Header() {
               padding: "0px 20px",
               fontSize: "13px",
               fontWeight: "600",
+              backgroundColor:"white"
             }}
           >
             SignUp

@@ -1,6 +1,7 @@
 import { Container, Grid } from "@mui/material"
 // import sub_logos from '../../assets/sub-logo3.jpg'
-import { H1, P } from "../../components/Typography"
+import { H1, P } from "../../components/Typography";
+import {ABOUTLOGO} from '../../utils/constants'
 
 
 function About() {
@@ -10,7 +11,7 @@ function About() {
         <Grid container xs={12}>
             <Grid item  md={6}>
               <Container sx={{px:3,py:3, backgroundColor: "white", width: "550px", boxShadow: " 0 4px 8px 0 rgb(94 94 94 / 20%), 0 6px 20px 0 rgb(171 171 171 / 19%)", borderRadius: "10px"}}>
-                {/* <img src={sub_logos} className="sub-logo" title="Subject_logo" /> */}
+                <img src={ABOUTLOGO} className="sub-logo" title="Subject_logo" />
               </Container>
             </Grid>
             <Grid item  md={6} px={9} >

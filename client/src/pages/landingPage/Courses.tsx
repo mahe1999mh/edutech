@@ -1,9 +1,6 @@
 import { Grid } from "@mui/material";
 import { H1, P } from "../../components/Typography";
-// import html_logo from "../../assets/html-logo3.png";
-// import css_logo from "../../assets/logo-css2.png";
-// import js_logo from "../../assets/js.png";
-// import react_logo from "../../assets/recat_logo.png";
+import { COURSELOGO2,COURSELOGO3, COURSELOGO4, COURSELOGO5 } from "../../utils/constants";
 function Courses() {
   return (
     <section id="course" className="sec">
@@ -22,7 +19,7 @@ function Courses() {
             alignItems: "center",
           }}
         >
-          {/* <img src={html_logo} className="couses-logo html" /> */}
+          <img src={COURSELOGO4} className="couses-logo html" />
           <P
             sx={{
               textAlign: "justify",
@@ -47,7 +44,7 @@ function Courses() {
             alignItems: "center",
           }}
         >
-          {/* <img src={css_logo} className="couses-logo css" /> */}
+          <img src={COURSELOGO2} className="couses-logo css" />
           <P
             sx={{
               textAlign: "justify",
@@ -72,7 +69,7 @@ function Courses() {
             alignItems: "center",
           }}
         >
-          {/* <img src={js_logo} className="couses-logo js" /> */}
+          <img src={COURSELOGO3} className="couses-logo js" />
           <P
             sx={{
               textAlign: "justify",
@@ -97,7 +94,7 @@ function Courses() {
             alignItems: "center",
           }}
         >
-          {/* <img src={react_logo} className="couses-logo react" /> */}
+          <img src={COURSELOGO5} className="couses-logo react" />
           <P
             sx={{
               textAlign: "justify",

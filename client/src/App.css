@@ -2,13 +2,15 @@ a {
     color: black;
     cursor: pointer;
 }
+
 .btn:visited {
     color: #555;
 }
 
 .btn:hover {
-    color:#555;
+    color: #555;
 }
+
 a:link {
     text-decoration: none;
 }
@@ -21,6 +23,7 @@ body {
     width: 80px;
     height: 80px;
     object-fit: contain;
+    border-radius: 50%;
 }
 
 .logo_container {
@@ -40,22 +43,21 @@ body {
 }
 
 .couses-logo {
-    width: 100px;
+    width: 250px;
     object-fit: contain;
 }
 
 .html {
-    width: 110px;
     margin-bottom: 10px;
 }
 
 .css {
-    width: 90px;
     margin-bottom: 10px;
 }
 
 .js {
-    margin-bottom: 18px;
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
 
 .react {
@@ -98,9 +100,19 @@ body {
 .input-label {
     margin: 4px 0;
 }
+
 .active {
     font-weight: 700;
 }
-#root{
+#root {
     height: 100vh;
+}
+.homelogo {
+    width: 500px;
+    object-fit: fill;
+    height: 300px;
+    box-shadow: 0 4px 8px 0 rgba(53, 53, 53, 0.2),
+        0 6px 20px 0 rgba(26, 26, 26, 0.19);
+    z-index: 1;
+    border-radius: 5px;
 }
